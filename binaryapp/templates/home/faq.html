@@ -1,0 +1,190 @@
+{% extends 'home/index.html' %}
+
+{% load static %}
+{% block main %}
+    <!-- Content -->
+    <div class="page-content bg-white">
+        <!-- inner page banner -->
+        <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner1.jpg);">
+            <div class="container">
+                <div class="page-banner-entry">
+                    <h1 class="text-white"></h1>
+				 </div>
+            </div>
+        </div>
+		<!-- Breadcrumb row -->
+		<div class="breadcrumb-row">
+			<div class="container">
+				<ul class="list-inline">
+					<li><a href="../">Home</a></li>
+					<li>Faqs</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Breadcrumb row END -->
+        <!-- contact area -->
+        <div class="content-block">
+            <!-- Your Faq -->
+            <div class="section-area section-sp1">
+                <div class="container">
+					<div class="row">
+						<div class="col-lg-8 col-md-12">
+							<div class="heading-bx left">
+								<h2 class="m-b10 title-head">Asked <span> Questions</span></h2>
+							</div>
+							<p class="m-b10">Costumers Frequently Asked Question</p>
+							<p> </p>
+							<div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+								<div class="panel">
+									<div class="acod-head">
+										<h6 class="acod-title">
+											<a data-toggle="collapse" href="#faq1" class="collapsed" data-parent="#faq1">
+											How can i get started? </a> </h6>
+									</div>
+									<div id="faq1" class="acod-body collapse">
+										<div class="acod-content">You can get started by clicking the get started link or register on the home page</div>
+									</div>
+								</div>
+								<div class="panel">
+									<div class="acod-head">
+										<h6 class="acod-title">
+											<a data-toggle="collapse" href="#faq2" class="collapsed" data-parent="#faq2">
+											How to start trading?</a> </h6>
+									</div>
+									<div id="faq2" class="acod-body collapse">
+										<div class="acod-content">For you to start trading, you have to deposit Cryptocurrency into your account and contact the admin to guide you</div>
+									</div>
+								</div>
+
+								<div class="panel">
+									<div class="acod-head">
+										<h6 class="acod-title">
+											<a data-toggle="collapse"  href="#faq5" class="collapsed"  data-parent="#faq5">
+											Changing account name </a> </h6>
+									</div>
+									<div id="faq5" class="acod-body collapse">
+										<div class="acod-content">Sorry you can't change your account name for security reasons.</div>
+									</div>
+								</div>
+							</div>
+							<p class="m-b10"></p>
+							<p></p>
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="assets/images/icon/icon1.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Award</h5>
+											<p>Bitcion Expert Traders is the Award winning Brokerage platform in the Universe as from 2012.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="assets/images/icon/icon2.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Message</h5>
+											<p>The Best and Trusted Brokerage Platform..</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="assets/images/icon/icon3.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Key Of Success</h5>
+											<p>BitcionExpertTradersis here to help you invest and save for present and future.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 m-b30">
+									<div class="feature-container">
+										<div class="feature-md text-white m-b20">
+											<a href="#" class="icon-cell"><img src="assets/images/icon/icon4.png" alt=""></a>
+										</div>
+										<div class="icon-content">
+											<h5 class="ttr-tilte">Medals</h5>
+											<p>2012, 2013, 2014, 2015, 2016, 2017, 2018 and Till date as the Best Brokerage Platform..</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12">
+							<form class="contact-bx dzForm" action="# ">
+							<div class="dzFormMsg"></div>
+								<div class="heading-bx left">
+									<h2 class="title-head">Get In <span>Touch</span></h2>
+									<p>Message us</p>
+								</div>
+								<div class="row placeani">
+									<div class="col-lg-6 ">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Name</label>
+												<input name="dzName" type="text" required class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Email Address</label>
+												<input name="dzEmail" type="email" class="form-control" required >
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Your Phone</label>
+												<input name="dzOther[Phone]" type="text" required class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Subject</label>
+												<input name="dzOther[Subject]" type="text" required class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<div class="input-group">
+												<label>Type Message</label>
+												<textarea name="dzMessage" rows="4" class="form-control" required ></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<div class="input-group">
+												<div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+												<input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<button name="submit" type="submit" value="Submit" class="btn button-md"> Send Message</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+                </div>
+            </div>
+            <!-- Your Faq End -->
+        </div>
+		<!-- contact area END -->
+    </div>
+    <!-- Content END-->
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends 'user/account.html' %}
+
+{% block title %}Binary Crypto Tradings - Profile{% endblock %}
+{% load static %}
+{% block main %}
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-white">Upload Means of Identification</h1>
+
+
+    </div>
+
+
+    <!-- Content Row -->
+    <div class="row">
+
+
+    </div>
+    <!-- Content Row -->
+    <div class="container bootstrap snippet">
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active row mt-2 text-white" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                    <p>Verify your account by uploading a valid Means of Identification.
+                </p>
+                <!--/col-3-->
+
+
+                                <div class="col-sm-12 text-white">
+
+                                        <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <!-- Form Starts -->
+                            <form method="POST" enctype="multipart/form-data" target="_self">
+
+                                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="documentName">Name Of Document</label>
+                                    <input id="documentName" type="text" class="form-control " name="id_type" required="" autofocus="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="documentFront">Document Front Page</label>
+                                    <input id="documentFront" type="file" class="form-control " name="id_front" required="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="documentBack">Document Back Page</label>
+                                    <input id="documentBack" type="file" class="form-control " name="id_back" required="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+
+                                <!-- Submit Form Button Starts -->
+                                <div class="form-group">
+                                    <input class="btn btn-primary" name="verify" type="submit" value="Verify Account" style="width: 100%;">
+                                </div>
+                                <!-- Submit Form Button Ends -->
+                            </form>
+                            <!-- Form Ends -->
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+
+                                    <!--here-->
+
+
+
+                <!--here-->
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock  %}

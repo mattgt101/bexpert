@@ -1,0 +1,71 @@
+{% extends 'user/account.html' %}
+
+{% block title %}Binary Crypto Tradings - Profile{% endblock %}
+{% load static %}
+{% block main %}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Fund Wallet</h1>
+
+    </div>
+
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-12 col-lg-12">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Make a deposit</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-gray-700">
+
+
+
+                    <p>make payment of $<span id="btc-amount-1">{{amt}}</span> to the wallet address below <br> <input type="text" class="mr-2" id="myInput" value="" style="border:none" readonly=""> <small id="copy" class="btn btn-primary btn-sm ml-2">copy</small>
+                    </p>
+
+                    <p><strong>Amount</strong> </p>
+                    <p>${{amt}}</p>
+                    <p><strong>Reference/Memo</strong> </p>
+                    <p>{{user.email}}</p>
+                    <center><h3>BUY BTC</h3></center>
+                    <a href="https://www.bitcoin.com/" class="btn btn-info">BITCOIN.COM</a>
+                    <a href="https://www.luno.com/" class="btn btn-success">LUNO</a>
+                    <a href="https://www.Paxful.com/" class="btn btn-danger">PAXFUL</a>
+                    <div class="mt-3">
+                        <p><strong>Scan QR code below for wallet address</strong></p>
+
+                        <img src="https://chart.googleapis.com/chart?chs=300x300&amp;cht=qr&amp;chl=bitcoin:" alt="">
+
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <form>
+                        <input type="text" name="fund" hidden>
+                        <button type="submit" class="btn btn-primary" href="/account/">I've made payment</button>
+                    </form>
+                    <a href="../dashboard">
+                        <button class="btn btn-secondary" type="button">Cancel</button>
+                    </a>
+                </div>
+                <form id="deposit-form" action="deposit" method="POST" style="display: none;">
+
+                    <input type="text" name="amount" value="234">
+                    <input type="text" name="amountInBtc" id="btc-amount-3" value="">
+                    <input type="text" name="username" value="fosmill3@gmail.com">
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+{% endblock %}

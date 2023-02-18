@@ -1,0 +1,838 @@
+<html lang="en">
+<head>
+    {% load static %}
+
+
+    <style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style><style type="text/css">.swal-icon--error{border-color:#f27474;-webkit-animation:animateErrorIcon .5s;animation:animateErrorIcon .5s}.swal-icon--error__x-mark{position:relative;display:block;-webkit-animation:animateXMark .5s;animation:animateXMark .5s}.swal-icon--error__line{position:absolute;height:5px;width:47px;background-color:#f27474;display:block;top:37px;border-radius:2px}.swal-icon--error__line--left{-webkit-transform:rotate(45deg);transform:rotate(45deg);left:17px}.swal-icon--error__line--right{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);right:16px}@-webkit-keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@keyframes animateErrorIcon{0%{-webkit-transform:rotateX(100deg);transform:rotateX(100deg);opacity:0}to{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);opacity:1}}@-webkit-keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}@keyframes animateXMark{0%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}50%{-webkit-transform:scale(.4);transform:scale(.4);margin-top:26px;opacity:0}80%{-webkit-transform:scale(1.15);transform:scale(1.15);margin-top:-6px}to{-webkit-transform:scale(1);transform:scale(1);margin-top:0;opacity:1}}.swal-icon--warning{border-color:#f8bb86;-webkit-animation:pulseWarning .75s infinite alternate;animation:pulseWarning .75s infinite alternate}.swal-icon--warning__body{width:5px;height:47px;top:10px;border-radius:2px;margin-left:-2px}.swal-icon--warning__body,.swal-icon--warning__dot{position:absolute;left:50%;background-color:#f8bb86}.swal-icon--warning__dot{width:7px;height:7px;border-radius:50%;margin-left:-4px;bottom:-11px}@-webkit-keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}@keyframes pulseWarning{0%{border-color:#f8d486}to{border-color:#f8bb86}}.swal-icon--success{border-color:#a5dc86}.swal-icon--success:after,.swal-icon--success:before{content:"";border-radius:50%;position:absolute;width:60px;height:120px;background:#fff;-webkit-transform:rotate(45deg);transform:rotate(45deg)}.swal-icon--success:before{border-radius:120px 0 0 120px;top:-7px;left:-33px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:60px 60px;transform-origin:60px 60px}.swal-icon--success:after{border-radius:0 120px 120px 0;top:-11px;left:30px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:0 60px;transform-origin:0 60px;-webkit-animation:rotatePlaceholder 4.25s ease-in;animation:rotatePlaceholder 4.25s ease-in}.swal-icon--success__ring{width:80px;height:80px;border:4px solid hsla(98,55%,69%,.2);border-radius:50%;box-sizing:content-box;position:absolute;left:-4px;top:-4px;z-index:2}.swal-icon--success__hide-corners{width:5px;height:90px;background-color:#fff;padding:1px;position:absolute;left:28px;top:8px;z-index:1;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}.swal-icon--success__line{height:5px;background-color:#a5dc86;display:block;border-radius:2px;position:absolute;z-index:2}.swal-icon--success__line--tip{width:25px;left:14px;top:46px;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation:animateSuccessTip .75s;animation:animateSuccessTip .75s}.swal-icon--success__line--long{width:47px;right:8px;top:38px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-animation:animateSuccessLong .75s;animation:animateSuccessLong .75s}@-webkit-keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@keyframes rotatePlaceholder{0%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}5%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}12%{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}to{-webkit-transform:rotate(-405deg);transform:rotate(-405deg)}}@-webkit-keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@keyframes animateSuccessTip{0%{width:0;left:1px;top:19px}54%{width:0;left:1px;top:19px}70%{width:50px;left:-8px;top:37px}84%{width:17px;left:21px;top:48px}to{width:25px;left:14px;top:45px}}@-webkit-keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}@keyframes animateSuccessLong{0%{width:0;right:46px;top:54px}65%{width:0;right:46px;top:54px}84%{width:55px;right:0;top:35px}to{width:47px;right:8px;top:38px}}.swal-icon--info{border-color:#c9dae1}.swal-icon--info:before{width:5px;height:29px;bottom:17px;border-radius:2px;margin-left:-2px}.swal-icon--info:after,.swal-icon--info:before{content:"";position:absolute;left:50%;background-color:#c9dae1}.swal-icon--info:after{width:7px;height:7px;border-radius:50%;margin-left:-3px;top:19px}.swal-icon{width:80px;height:80px;border-width:4px;border-style:solid;border-radius:50%;padding:0;position:relative;box-sizing:content-box;margin:20px auto}.swal-icon:first-child{margin-top:32px}.swal-icon--custom{width:auto;height:auto;max-width:100%;border:none;border-radius:0}.swal-icon img{max-width:100%;max-height:100%}.swal-title{color:rgba(0,0,0,.65);font-weight:600;text-transform:none;position:relative;display:block;padding:13px 16px;font-size:27px;line-height:normal;text-align:center;margin-bottom:0}.swal-title:first-child{margin-top:26px}.swal-title:not(:first-child){padding-bottom:0}.swal-title:not(:last-child){margin-bottom:13px}.swal-text{font-size:16px;position:relative;float:none;line-height:normal;vertical-align:top;text-align:left;display:inline-block;margin:0;padding:0 10px;font-weight:400;color:rgba(0,0,0,.64);max-width:calc(100% - 20px);overflow-wrap:break-word;box-sizing:border-box}.swal-text:first-child{margin-top:45px}.swal-text:last-child{margin-bottom:45px}.swal-footer{text-align:right;padding-top:13px;margin-top:13px;padding:13px 16px;border-radius:inherit;border-top-left-radius:0;border-top-right-radius:0}.swal-button-container{margin:5px;display:inline-block;position:relative}.swal-button{background-color:#7cd1f9;color:#fff;border:none;box-shadow:none;border-radius:5px;font-weight:600;font-size:14px;padding:10px 24px;margin:0;cursor:pointer}.swal-button:not([disabled]):hover{background-color:#78cbf2}.swal-button:active{background-color:#70bce0}.swal-button:focus{outline:none;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(43,114,165,.29)}.swal-button[disabled]{opacity:.5;cursor:default}.swal-button::-moz-focus-inner{border:0}.swal-button--cancel{color:#555;background-color:#efefef}.swal-button--cancel:not([disabled]):hover{background-color:#e8e8e8}.swal-button--cancel:active{background-color:#d7d7d7}.swal-button--cancel:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(116,136,150,.29)}.swal-button--danger{background-color:#e64942}.swal-button--danger:not([disabled]):hover{background-color:#df4740}.swal-button--danger:active{background-color:#cf423b}.swal-button--danger:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(165,43,43,.29)}.swal-content{padding:0 20px;margin-top:20px;font-size:medium}.swal-content:last-child{margin-bottom:20px}.swal-content__input,.swal-content__textarea{-webkit-appearance:none;background-color:#fff;border:none;font-size:14px;display:block;box-sizing:border-box;width:100%;border:1px solid rgba(0,0,0,.14);padding:10px 13px;border-radius:2px;transition:border-color .2s}.swal-content__input:focus,.swal-content__textarea:focus{outline:none;border-color:#6db8ff}.swal-content__textarea{resize:vertical}.swal-button--loading{color:transparent}.swal-button--loading~.swal-button__loader{opacity:1}.swal-button__loader{position:absolute;height:auto;width:43px;z-index:2;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);text-align:center;pointer-events:none;opacity:0}.swal-button__loader div{display:inline-block;float:none;vertical-align:baseline;width:9px;height:9px;padding:0;border:none;margin:2px;opacity:.4;border-radius:7px;background-color:hsla(0,0%,100%,.9);transition:background .2s;-webkit-animation:swal-loading-anim 1s infinite;animation:swal-loading-anim 1s infinite}.swal-button__loader div:nth-child(3n+2){-webkit-animation-delay:.15s;animation-delay:.15s}.swal-button__loader div:nth-child(3n+3){-webkit-animation-delay:.3s;animation-delay:.3s}@-webkit-keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}@keyframes swal-loading-anim{0%{opacity:.4}20%{opacity:.4}50%{opacity:1}to{opacity:.4}}.swal-overlay{position:fixed;top:0;bottom:0;left:0;right:0;text-align:center;font-size:0;overflow-y:auto;background-color:rgba(0,0,0,.4);z-index:10000;pointer-events:none;opacity:0;transition:opacity .3s}.swal-overlay:before{content:" ";display:inline-block;vertical-align:middle;height:100%}.swal-overlay--show-modal{opacity:1;pointer-events:auto}.swal-overlay--show-modal .swal-modal{opacity:1;pointer-events:auto;box-sizing:border-box;-webkit-animation:showSweetAlert .3s;animation:showSweetAlert .3s;will-change:transform}.swal-modal{width:478px;opacity:0;pointer-events:none;background-color:#fff;text-align:center;border-radius:5px;position:static;margin:20px auto;display:inline-block;vertical-align:middle;-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 50%;transform-origin:50% 50%;z-index:10001;transition:opacity .2s,-webkit-transform .3s;transition:transform .3s,opacity .2s;transition:transform .3s,opacity .2s,-webkit-transform .3s}@media (max-width:500px){.swal-modal{width:calc(100% - 20px)}}@-webkit-keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}@keyframes showSweetAlert{0%{-webkit-transform:scale(1);transform:scale(1)}1%{-webkit-transform:scale(.5);transform:scale(.5)}45%{-webkit-transform:scale(1.05);transform:scale(1.05)}80%{-webkit-transform:scale(.95);transform:scale(.95)}to{-webkit-transform:scale(1);transform:scale(1)}}</style><script src="https://widgets.bitcoin.com/widget.js" id="btcwdgt"></script><script src="../LIVECHAT.js"></script><script src="https://client.crisp.chat/l.js" async=""></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Binary Crypto Tradings - Dashboard{% endblock %}</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <!-- Custom fonts for this template-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="{% static 'trade/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'trade/css/font-awesome.min.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'trade/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+
+    <style>
+        .card {
+            border: 0px;
+        }
+
+    </style>
+
+    <link href="https://client.relay.crisp.chat" rel="dns-prefetch" crossorigin=""><link href="https://client.crisp.chat" rel="preconnect" crossorigin=""><script src="https://client.crisp.chat/static/javascripts/client.js?4b470ea" type="text/javascript" async=""></script><link href="https://client.crisp.chat/static/stylesheets/client_legacy.css?4b470ea" type="text/css" rel="stylesheet"></head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<body id="page-top">
+<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion toggled" id="accordionSidebar" style="background-color: #1f1a40 !important">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+        </a>
+    {% if user.code == site.admin %}
+        <p><a href="/admin/">
+        <center> <button type="button" class="btn btn-primary">Admin</button></center>
+        </a> </p>
+
+        {% endif %}
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class=" nav-item  active">
+            <a class="nav-link" href="/account/">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+
+
+        <!-- Nav Item - Dashboard -->
+        <li class=" nav-item ">
+            <a class="nav-link" href="/profile/">
+                <i class="fa fa-user fa-tachometer-alt"></i>
+                <span>Profile</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+
+        <!-- Nav Item - Dashboard -->
+        <li class=" nav-item ">
+            <a class="nav-link" href="/verification/">
+                <i class="fa fa-user fa-tachometer-alt"></i>
+                <span>Upload Identification</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+
+        <!-- Nav Item - Dashboard -->
+        <li class=" nav-item ">
+            <a class="nav-link" href="#" data-toggle="modal" data-target="#walletModal">
+                <i class="fa fa-btc fa-tachometer-alt"></i>
+                <span>Fund Account</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item ">
+            <a class=" nav-link" href="#" data-toggle="modal" data-target="#withdrawModal">
+                <i class="fa fa-usd fa-tachometer-alt"></i>
+                <span>Place Withdrawal</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Dashboard -->
+        <li class=" nav-item ">
+            <a class=" nav-link" href="/upgrade/">
+                <i class="fa fa-usd fa-tachometer-alt"></i>
+                <span>Upgrade Account</span></a>
+        </li>
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content" class="bg-dark" style="background-color: #25204a !important">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-dark bg-secondary topbar static-top shadow text-white" style="background-color: #374f65 !important">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+
+                <div>
+                    Account Status - <span class="text-capitalize font-weight-bold text-white">{{ status }}</span>
+
+                </div>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+
+
+
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw text-white"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">0</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                Notification
+                            </h6>
+
+
+                            <a class="dropdown-item text-center small text-gray-500" href="#">Click on each to mark as read</a>
+                        </div>
+                    </li>
+
+
+
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                            <span class="mr-2 d-none d-lg-inline text-white small"> sam vivi</span>
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white "></i>
+
+
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                            <a class="dropdown-item" href="change-password">
+                                <i class="fa fa-key fa-sm fa-fw mr-2 text-dark"></i>
+                                Change Password
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-dark"></i>
+                                Logout
+                            </a>
+                            <div class="dropdown-divider"></div>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <div class="mb-2">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container" style="width: 100%; height: 74px;">
+                    <iframe scrolling="no" allowtransparency="true" frameborder="0" src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22Nasdaq%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22BTC%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22ETH%2FUSD%22%7D%5D%2C%22colorTheme%22%3A%22dark%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A74%2C%22utm_source%22%3A%22BinaryCryptoTradings.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D" style="box-sizing: border-box; height: 74px; width: 100%;"></iframe>
+
+
+                    <style>
+	.tradingview-widget-copyright {
+		font-size: 13px !important;
+		line-height: 32px !important;
+		text-align: center !important;
+		vertical-align: middle !important;
+		font-family: 'Trebuchet MS', Arial, sans-serif !important;
+		color: #9db2bd !important;
+	}
+
+	.tradingview-widget-copyright .blue-text {
+		color: #2962FF !important;
+	}
+
+	.tradingview-widget-copyright a {
+		text-decoration: none !important;
+		color: #9db2bd !important;
+	}
+
+	.tradingview-widget-copyright a:visited {
+		color: #9db2bd !important;
+	}
+
+	.tradingview-widget-copyright a:hover .blue-text {
+		color: #1E53E5 !important;
+	}
+
+	.tradingview-widget-copyright a:active .blue-text {
+		color: #1848CC !important;
+	}
+
+	.tradingview-widget-copyright a:visited .blue-text {
+		color: #2962FF !important;
+	}
+	</style></div>
+                <!-- TradingView Widget END -->
+            </div>
+            {% block main %}
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class=" container-fluid">
+
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-white text-capitalize">Dashboard -
+                        BASIC Account</h1>
+                    <div>
+                        <a href="#" data-toggle="modal" data-target="#walletModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-btc fa-sm text-white-50"></i> Fund Wallet</a>
+                        <a href="#" data-toggle="modal" data-target="#withdrawModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fa fa-usd fa-sm text-white-50"></i> Withdraw</a>
+                        <a href="refer" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Refer Friends
+                            &amp; Get Rewarded
+                        </a>
+                        <!--<a href="#" data-toggle="modal" data-target="#trialModal"-->
+                        <!--    class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm">Startup with a-->
+                        <!--    trial-->
+                        <!--</a>-->
+                    </div>
+
+                </div>
+
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-primary shadow h-100 py-2" style="
+                background: #94095d !important;
+            ">
+
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            Invested</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">
+                                            ${{ user.invest }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-usd fa-2x text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-danger shadow h-100 py-2" style="
+            background: #868e96 !important;
+        ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            Profit</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">
+                                            ${{ user.profit }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-bar-chart fa-2x text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pending Requests Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-warning shadow h-100 py-2" style="
+            background: #1e88e5 !important;
+        ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            Bonus</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">
+                                            ${{ user.bonus }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-money fa-2x text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-success shadow h-100 py-2" style="
+            background: #0d755d !important;
+        ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            Balance</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">
+                                            ${{ user.bal }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-line-chart fa-2x text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-secondary shadow h-100 py-2" style="
+            background: #3ec3c3 !important;
+        ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            BTC Equivalent</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white" id="btc-balance">{{ user.btc_equ }}</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fa fa-btc fa-2x text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-3 col-md-6 mb-2" style="height: 85px">
+                        <div class="card bg-info shadow h-100 py-2" style="
+            background: #1f1a40 !important;
+        ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-white text-uppercase mb-1">
+                                            Refer Friends. Get Rewarded</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <div><a href="refer" class="d-lg-inline-block btn btn-sm btn-primary shadow-sm">Refer Friends
+
+                                            </a> </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Content Row -->
+
+                <div class="row mt-2">
+                    <div class="col-md-6 mb-3">
+                        <div style="height:560px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+                            <div style="height:540px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=859&amp;pref_coin_id=1505" width="100%" height="536px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header  py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-dark">Transaction History</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <ul class="list-group">
+                                    {% for His in his %}
+                                    <li class="list-group-item mb-2  text-dark"> {{His.date}}  <span class="font-weight-bold">You made a {{His.type}} of {{His.amount}}<br>status: {{His.status}}</span></li>
+                                    <br>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+
+                </div>
+
+            </div>
+
+            {% endblock %}
+            <!-- /.container-fluid -->
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script>
+//         function myswal() {
+// var someVarName = "value";
+// localStorage.setItem("someVarKey", someVarName);
+// var someVarName = localStorage.getItem("someVarKey");
+
+//             if(someVarName == 'value'){
+//                 console.log(someVarName);
+
+//             swal("NOTICE!!!", "NOTE THAT ALL DEPOSITS/PAYMENTS SHOULD BE MADE DIRECTLY TO THE COMPANY ACCOUNT/BITCOIN WALLETADDRESS, NO PAYMENTS/DEPOSITS SHOULD BE MADE TO ANY ACCOUNT MANAGER. THE COMPANY WILL NOT BE HELD RESPONSIBLE FOR ANY LOSS THAT COMES WITH MAKING PAYMENTS TO ANY ACCOUNT MANAGER. THANK YOU FOR YOUR UNDERSTANDING AND COOPERATION\. info@BinaryCryptoTradings.com", "warning");
+//             console.log(someVarName);
+//         }}
+//         myswal();
+    </script>
+
+        </div>
+        <!-- End of Main Content -->
+        <!-- Footer -->
+        <footer class="sticky-footer bg-secondary shadow-lg" style="background-color: #374f65 !important">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto text-white">
+                    <span>Copyright © Binary Crypto Tradings  2021</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="logout" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Yes</a>
+            </div>
+            <form id="logout-form" action="logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">            </form>
+        </div>
+    </div>
+</div>
+<!-- Logout Modal-->
+<div class="modal fade" id="walletModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Amount to deposit</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--/col-3-->
+                <div class="col-sm-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <!-- Form Starts -->
+                            <form method="POST" target="_self">
+                                {% csrf_token %}
+                                <!--<input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="amount">Amount in USD</label>
+                                    <input id="amount" type="number" class="form-control " name="amount" value="" required="" autocomplete="amount" autofocus="">
+
+
+                                </div>
+                                <!-- Input Field Ends -->
+
+
+
+                                <!-- Submit Form Button Starts -->
+                                <div class="form-group">
+                                    <input class="btn btn-primary" type="submit" value="Deposit" style="width: 100%;">
+                                </div>
+                                <!-- Submit Form Button Ends -->
+                            </form>
+                            <!-- Form Ends -->
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+            </div>
+            <form id="logout-form" action="logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">            </form>
+        </div>
+    </div>
+</div>
+<!-- Logout Modal-->
+<div class="modal fade" id="withdrawModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Amount to Withdraw</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--/col-3-->
+                <div class="col-sm-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <!-- Form Starts -->
+                            <form method="#">
+                                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="amount">Amount in USD</label>
+                                    <input id="amount" type="number" class="form-control " name="amount" value="" required="" autocomplete="amount" autofocus="">
+
+
+                                </div>
+                                <!-- Input Field Ends -->
+
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="address">Btc Address</label>
+                                    <input id="address" type="text" class="form-control " name="address" value="" required="" autocomplete="address" autofocus="">
+
+
+                                </div>
+                                <!-- Input Field Ends -->
+
+
+
+                                <!-- Submit Form Button Starts -->
+                                <div class="form-group">
+                                    <!--<input class="btn btn-primary" name="_s_up" type="submit" value="Withdraw"-->
+                                    <!--    style="width: 100%;">-->
+                                    <button class="btn btn-primary" id="mybtnWith">Withdraw Now</button>
+
+                                </div>
+                                <!-- Submit Form Button Ends -->
+                            </form>
+                            <!-- Form Ends -->
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+ var btn = document.getElementById('mybtnWith');
+ btn.addEventListener('click',myswal)
+         function myswal(e) {
+e.preventDefault();
+
+           swal("NOTICE!", "Please contact the admin on info@BinaryCryptoTradings.com ", "warning");
+             console.log('someVarName');
+         }
+
+    </script>
+<!-- Logout Modal-->
+<div class="modal fade" id="trialModal" tabindex="-1" role="dialog" aria-labelledby="trialModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Amount to deposit</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--/col-3-->
+                <div class="col-sm-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <strong>You can start a free trial by depositing from $100 - $499.
+                            </strong>
+                            <!-- Form Starts -->
+                            <form method="POST" action="/wallet/fund/trial">
+                                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="amount">Amount in USD</label>
+                                    <input id="amount" type="number" class="form-control " name="amount" value="" required="" autocomplete="amount" autofocus="">
+
+
+                                </div>
+                                <!-- Input Field Ends -->
+
+
+
+                                <!-- Submit Form Button Starts -->
+                                <div class="form-group">
+                                    <input class="btn btn-primary" name="_s_up" type="submit" value="Deposit" style="width: 100%;">
+                                </div>
+                                <!-- Submit Form Button Ends -->
+                            </form>
+                            <!-- Form Ends -->
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+            </div>
+            <form id="logout-form" action="logout" method="POST" style="display: none;">
+                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'trade/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'trade/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'trade/js/custom2.js' %}"></script>
+
+<script src="{% static 'trade/js/notification.js' %}"></script>
+<!-- Core plugin JavaScript-->
+<script src="{% static 'trade/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{% static 'trade/js/sb-admin-2.min.js' %}"></script>
+
+<input type="hidden" name="" id="main-balance" value="0">
+<script>
+
+
+    $(document).ready(function () {
+      if($("#main-balance").val()  == "0") {
+        $("#btc-balance" ).html("0.00000000")
+      }else{
+      $("#btc-balance" ).load( "https://blockchain.info/tobtc?currency=USD&value=" +$("#main-balance").val()  );
+    }
+    });
+  </script>
+
+
+
+<div class="crisp-client"><div class="cc-l3zb"><div class="cc-lcor"><style type="text/css">.crisp-client .cc-kv6t .cc-6zjc,
+.crisp-client .cc-kv6t .cc-1mk2:hover {
+  color: #FFFFFF !important;
+}
+
+.crisp-client .cc-kv6t .cc-jq4y,
+.crisp-client .cc-kv6t .cc-5lan:hover {
+  color: #1972F5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-k5w4 {
+  background-color: #FFFFFF !important;
+}
+
+.crisp-client .cc-kv6t .cc-5ekd {
+  background-color: #004AB5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-16jc {
+  background-color: #055EE1 !important;
+}
+
+.crisp-client .cc-kv6t .cc-1ada,
+.crisp-client .cc-kv6t .cc-ew5j:before,
+.crisp-client .cc-kv6t .cc-ew5j:after {
+  background-color: #1972F5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-y5jx {
+  background-color: #EFF5FE !important;
+}
+
+.crisp-client .cc-kv6t .cc-y6ot,
+.crisp-client .cc-kv6t .cc-183m:hover {
+  background-color: #F5F8FB !important;
+}
+
+.crisp-client .cc-kv6t .cc-1ybb {
+  background-image: linear-gradient(125deg, #1972F5 -10%, #004AB5 100%) !important;
+}
+
+.crisp-client .cc-kv6t .cc-ofgq,
+.crisp-client .cc-kv6t .cc-fg2d:hover {
+  border-color: #FFFFFF !important;
+}
+
+.crisp-client .cc-kv6t .cc-2ydi {
+  border-color: rgba(0, 74, 181, 0.175) !important;
+}
+
+.crisp-client .cc-kv6t .cc-1aev,
+.crisp-client .cc-kv6t .cc-2hzo:hover,
+.crisp-client .cc-kv6t .cc-18sf:before,
+.crisp-client .cc-kv6t .cc-18sf:after {
+  border-color: #1972F5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-1nph {
+  border-color: rgba(25, 114, 245, 0.15) !important;
+}
+
+.crisp-client .cc-kv6t .cc-1o96 {
+  border-top-color: #1972F5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-ve3u,
+.crisp-client .cc-kv6t .cc-1nmg:hover {
+  border-color: #EFF5FE !important;
+}
+
+.crisp-client .cc-kv6t .cc-clw4::placeholder {
+  color: #6E9BDE !important;
+}
+
+.crisp-client .cc-kv6t .cc-2n8m::placeholder {
+  color: #6E9BDE !important;
+}
+
+.crisp-client .cc-kv6t .cc-3x4f,
+.crisp-client .cc-kv6t .cc-1afs:hover,
+.crisp-client .cc-kv6t .cc-3x4f:hover,
+.crisp-client .cc-kv6t .cc-1afs:active,
+.crisp-client .cc-kv6t .cc-3x4f:active,
+.crisp-client .cc-kv6t .cc-1c1d:hover .cc-1f87,
+.crisp-client .cc-kv6t .cc-1c1d .cc-1f87:active {
+  background: #004AB5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-4xbu,
+.crisp-client .cc-kv6t .cc-caj5:hover {
+  background: #0057D7 !important;
+}
+
+.crisp-client .cc-kv6t .cc-4xbu:hover,
+.crisp-client .cc-kv6t .cc-caj5:active {
+  background: #004FC3 !important;
+}
+
+.crisp-client .cc-kv6t .cc-4xbu:active {
+  background: #004AB5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-g73w:hover .cc-199t {
+  background: #0057D7 !important;
+}
+
+.crisp-client .cc-kv6t .cc-g73w .cc-199t:active {
+  background: #004FC3 !important;
+}
+
+.crisp-client .cc-kv6t .cc-vuur,
+.crisp-client .cc-kv6t .cc-7rgf[data-active="true"] {
+  background: #1972F5 !important;
+}
+
+.crisp-client .cc-kv6t .cc-vuur:hover,
+.crisp-client .cc-kv6t .cc-7rgf[data-active="true"]:active {
+  background: #055EE1 !important;
+}
+
+.crisp-client .cc-kv6t .cc-vuur:active {
+  background: #0057D7 !important;
+}
+
+.crisp-client .cc-kv6t .cc-1gmp::selection,
+.crisp-client .cc-kv6t .cc-1gmp *::selection {
+  color: #191919 !important;
+  background-color: #E2EEFF !important;
+}</style></div><div class="cc-1kny"><style type="text/css">.crisp-client .cc-kv6t {
+  z-index: 1000000;
+}
+</style>
+
+</body>
+</html>

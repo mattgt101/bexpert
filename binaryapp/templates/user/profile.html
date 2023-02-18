@@ -1,0 +1,135 @@
+{% extends 'user/account.html' %}
+
+{% block title %}Binary Crypto Tradings - Profile{% endblock %}
+{% load static %}
+{% block main %}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-white">Profile</h1>
+        <div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Content Row -->
+    <div class="row">
+
+
+    </div>
+    <!-- Content Row -->
+    <div class="container bootstrap snippet">
+
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active row mt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <!--/col-3-->
+                <div class="col-sm-12 text-white">
+
+                                        <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <!-- Form Starts -->
+                            <form method="POST" action="profile/update">
+                                <input type="hidden" name="_token" value="fWlWVQPsC9YzVszi4YXGAjQ5W9NFxAwMTCb56xGz">                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="firstname">Firstname</label>
+                                    <input id="firstname" type="text" class="form-control " name="firstname" value="sam" placeholder="Firstname" required="" autocomplete="firstname" autofocus="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="lastname">Lastname</label>
+                                    <input id="lastname" type="text" class="form-control " name="lastname" value="vivi" placeholder="Lastname" required="" autocomplete="lastname" autofocus="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input id="email" type="email" class="form-control " name="email" value="fosmill3@gmail.com" placeholder="Email" disabled="" required="" autocomplete="email">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+
+                                <!-- Input Field Starts -->
+                                <!-- <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input id="username" type="name"
+                                        class="form-control " name="username"
+                                        value="sam" placeholder="Username" required
+                                        autocomplete="username" disabled autofocus>
+
+                                                                    </div> -->
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <!-- <div class="form-group">
+                                    <label for="sex">Sex</label>
+
+                                    <select id="sex" type="text" class="form-control "
+                                        name="sex" value="male" required autocomplete="sex"
+                                        autofocus>
+                                        <option value="male"                                             selected="selected"
+                                            >Male</option>
+                                        <option value="female" >Female</option>
+                                    </select>
+
+                                                                    </div> -->
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="phone_number">Phone Number</label>
+
+                                    <input id="phone_number" type="tel" class="form-control " name="phone_number" value="2177479080" placeholder="Phone Number" required="" autocomplete="phone_number">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <!-- <div class="form-group">
+                                    <label for="dob">Date of birth</label>
+
+                                    <input id="dob" type="text" class="form-control "
+                                        name="dob"
+                                        value="sam"
+                                        disabled required autocomplete="dob">
+
+                                                                    </div> -->
+                                <!-- Input Field Ends -->
+                                <!-- Input Field Starts -->
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+
+                                    <input id="country" type="text" class="form-control " name="country" value="Angola" required="" autocomplete="country" disabled="" autofocus="">
+
+                                                                    </div>
+                                <!-- Input Field Ends -->
+
+                                <!-- Submit Form Button Starts -->
+                                <div class="form-group">
+                                    <!-- <input class="btn btn-primary" name="_s_up" type="submit" value="Update Profile"
+                                        style="width: 100%;"> -->
+                                </div>
+                                <!-- Submit Form Button Ends -->
+                            </form>
+                            <!-- Form Ends -->
+                        </div>
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+
+            </div>
+        </div>
+        <!--/col-9-->
+    </div>
+    <!--/row-->
+
+
+
+</div>
+{% endblock  %}

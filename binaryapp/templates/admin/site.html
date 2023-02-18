@@ -1,0 +1,51 @@
+{% extends 'user/account.html' %}
+{% block title %}edit{% endblock %}
+
+{% block main %}
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+<div class="col m10 push-m1">
+<div class="row">
+    <div class="col s5">
+        <a href="/admin/" class="col s12 btn ">members</a>
+    </div>
+
+    <div class="col s5">
+        <a href="/site/" class="col s12 btn blue">manage_site</a>
+    </div>
+    <!--the manage-->
+    <form method="post" target="_self" class="col s12 m5">
+            {% csrf_token %}
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">
+                        MANAGE <a class="btn right"><i class="material-icons">edit</i></a>
+                    </span>
+                    <br/>
+                    <p>mail: <input name="mail" class="edit" value="{{site.email}}" style="width:30%;color:white;"></p>
+                    <p>phone: <input name="phone" class="edit" value="{{site.phone}}" style="width:70%;color:white;"></p>
+                    <p>address: <input name="add" class="edit" value="{{site.add}}" style="width:70%;color:white;"></p>
+                    <p>btc wallet: <input name="btc" class="edit" value="{{site.btc_wallet}}" style="width:70%;color:white;"></p>
+                    <p>eth wallet: <input name="eth" class="edit" value="{{site.eth_wallet}}" style="width:70%;color:white;"></p>
+                    <p>admin : <input name="code" class="edit" value="{{site.admin}}" style="width:70%;color:white;"></p>
+                    <br/>
+                    <p><button class="btn waves-effect blue" type="submit">update</button></p>
+                </div>
+                <div class="card-action">
+                </div>
+            </div>
+        </form>
+
+
+</div>
+    </div>
+{% endblock %}
